@@ -38,7 +38,7 @@ The delayed puzzlehash is the address where the recovered funds will go to.
 
 From my observations, I noticed that the delayed puzzlehash is always the third hardened address of a mnemonic.
 
-To quickly get the delayedPH to use with TOMATO, you can use WILLOW to generate your addresses of the hot wallet, and then convert the third address to a puzzlehash.
+To quickly get the delayedPH to use with TOMATO, you can use WILLOW (https://github.com/ageorge95/WILLOW-chia-forks-instant-wallet-balance) to generate your addresses of the hot wallet, and then convert that address to a puzzlehash.
 
 # How to get the launcher, contract
 
