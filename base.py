@@ -23,7 +23,7 @@ class db_wrapper_v1():
     ):
 
         self._dbcursor.execute(
-            f"SELECT * "
+            f"SELECT coin_parent, amount "
             f"FROM coin_record "
             f"WHERE spent == 0 "
             f"AND timestamp > (strftime('%s', 'now') - { delay }) "
@@ -40,7 +40,7 @@ class db_wrapper_v1():
     ):
 
         self._dbcursor.execute(
-            f"SELECT * "
+            f"SELECT coin_parent, amount "
             f"FROM coin_record "
             f"WHERE spent == 0 "
             f"AND timestamp <= (strftime('%s', 'now') - { delay }) "
@@ -56,10 +56,43 @@ class db_wrapper_v2():
         self._conn = connect(db_filepath)
         self._dbcursor = self._conn.cursor()
 
-    def get_coins_by_puzzlehash(self,
-                                puzzlehash):
-        self._dbcursor.execute("SELECT amount, spent_index FROM coin_record WHERE puzzle_hash=?", (bytes.fromhex(puzzlehash),))
-        return self._dbcursor.fetchall()
+    def get_unqualified_coins(
+            self,
+            delay,
+            contract_hex
+    ):
+
+        self._dbcursor.execute(
+            f"SELECT coin_parent, amount "
+            f"FROM coin_record "
+            f"WHERE spent_index == 0 "
+            f"AND timestamp > (strftime('%s', 'now') - { delay }) "
+            f"AND puzzle_hash LIKE ? "
+            f"ORDER BY timestamp DESC",
+            (contract_hex,)
+        )
+
+        return [[entry[0].hex(),
+                 entry[1]] for entry in self._dbcursor.fetchall()]
+
+    def get_qualified_coins(
+            self,
+            delay,
+            contract_hex
+    ):
+
+        self._dbcursor.execute(
+            f"SELECT coin_parent, amount "
+            f"FROM coin_record "
+            f"WHERE spent_index == 0 "
+            f"AND timestamp <= (strftime('%s', 'now') - { delay }) "
+            f"AND puzzle_hash LIKE ? "
+            f"ORDER BY timestamp DESC",
+            (bytes.fromhex(contract_hex),)
+        )
+
+        return [[entry[0].hex(),
+                 entry[1]] for entry in self._dbcursor.fetchall()]
 
 def db_wrapper_selector(version: int):
     if version == 1:

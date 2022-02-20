@@ -84,7 +84,7 @@ class Tomato():
                 contract_hex=self.contract_hex
             )
             unqualified_len = len(coins)
-            unqualified_amount = sum([int.from_bytes(x[7], byteorder='big', signed=False)/assets[self.asset]['denominator'] for x in coins])
+            unqualified_amount = sum([int.from_bytes(x[1], byteorder='big', signed=False)/assets[self.asset]['denominator'] for x in coins])
             self._log.info(f"There are { unqualified_len } unqualified coins (that cannot be recovered YET), adding up to"
                            f" { unqualified_amount } { self.asset }.")
 
@@ -96,7 +96,7 @@ class Tomato():
             )
 
             qualified_len = len(coins)
-            qualified_amount = sum([int.from_bytes(x[7], byteorder='big', signed=False)/assets[self.asset]['denominator'] for x in coins])
+            qualified_amount = sum([int.from_bytes(x[1], byteorder='big', signed=False)/assets[self.asset]['denominator'] for x in coins])
             self._log.info(f"There are { qualified_len } qualified coins, adding up to"
                            f" { qualified_amount } { self.asset }.")
 
@@ -105,8 +105,8 @@ class Tomato():
             else:
                 coin_solutions = []
                 for coin in coins:
-                    coin_parent: str = coin[6]
-                    coin_amount: int = int.from_bytes(coin[7], byteorder='big', signed=False)
+                    coin_parent: str = coin[0]
+                    coin_amount: int = int.from_bytes(coin[1], byteorder='big', signed=False)
 
                     coin_solution_hex: str = bytes(SerializedProgram.from_program(
                         Program.to([uint64(coin_amount), 0])
@@ -130,7 +130,7 @@ class Tomato():
 
                 for coin_solution_batch in [coin_solutions[x:x + 10] for x in range(0, len(coin_solutions), 10)]:
                     try:
-                        coin_amount = sum([entry['coin']['amount']/assets[self.asset]['denominator'] for entry in coin_solutions])
+                        coin_amount = sum([entry['coin']['amount']/assets[self.asset]['denominator'] for entry in coin_solution_batch])
                         self._log.info(f"Trying to recover a batch of { len(coin_solution_batch) } "
                                        f"coins adding up to  { coin_amount } { self.asset } ...")
                         response = requests.post(
