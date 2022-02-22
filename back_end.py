@@ -133,18 +133,25 @@ class Tomato():
                         coin_amount = sum([entry['coin']['amount']/assets[self.asset]['denominator'] for entry in coin_solution_batch])
                         self._log.info(f"Trying to recover a batch of { len(coin_solution_batch) } "
                                        f"coins adding up to  { coin_amount } { self.asset } ...")
-                        response = requests.post(
-                            url=f'https://localhost:{ self.full_node_RPC_port }/push_tx',
-                            cert=(ssl_crt,
-                                  ssl_key),
-                            verify=False,
-                            json={
-                                'spend_bundle': {
-                                    'aggregated_signature': dummy_aggregated_sig,
-                                    'coin_spends': coin_solutions
-                                }
-                            }).json()
-                        self._log.info(f"The full node responded with { response }")
+
+                        # use the 2 known ways to describe the spend bundle
+                        # in this way compatibility with all the forks should be assured
+                        for variation in ['coin_spends', 'coin_solutions']:
+                            response = requests.post(
+                                url=f'https://localhost:{ self.full_node_RPC_port }/push_tx',
+                                cert=(ssl_crt,
+                                      ssl_key),
+                                verify=False,
+                                json={
+                                    'spend_bundle': {
+                                        'aggregated_signature': dummy_aggregated_sig,
+                                        variation: coin_solutions
+                                    }
+                                }).json()
+                            self._log.info(f"The full node responded with { response }")
+                            if response['success']:
+                                break
+
                         if not response['success']:
                             raise Exception
                         self._log.info('Recovery completed !')
