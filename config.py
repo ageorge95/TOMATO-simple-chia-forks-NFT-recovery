@@ -45,7 +45,7 @@ assets = {'GL': {'db_filepath': '{userdir}\\.gold\\mainnet\\db\\blockchain_v1_ma
          'MGA': {'db_filepath': '{userdir}\\.mogua\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
                  'denominator': 1000000000000,
                  'friendly_name': 'mogua'},
-         'NCH': {'db_filepath': '{userdir}\\.chia\\ext9\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
+         'NCH': {'db_filepath': '{userdir}\\.chia\\ext9\\db\\blockchain_v1_ext9.sqlite'.format(userdir=path.expanduser("~")),
                  'denominator': 1000000000000,
                  'friendly_name': 'n-chain_ext9'},
          'OZT': {'db_filepath': '{userdir}\\.goldcoin\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
