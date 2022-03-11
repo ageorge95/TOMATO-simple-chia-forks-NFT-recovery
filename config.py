@@ -96,7 +96,7 @@ assets = {'GL': {'db_filepath': '{userdir}\\.gold\\mainnet\\db\\blockchain_v1_ma
          'XBT': {'db_filepath': '{userdir}\\.beet\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
                  'denominator': 1000000000000,
                  'friendly_name': 'Beet'},
-         'XBTC': {'db_filepath': '{userdir}\\.btcgreen\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
+         'XBTC': {'db_filepath': '{userdir}\\.btcgreen\\mainnet\\db\\blockchain_v2_mainnet.sqlite'.format(userdir=path.expanduser("~")),
                   'denominator': 1000000000000,
                   'friendly_name': 'btcgreen'},
          'XCA': {'db_filepath': '{userdir}\\.xcha\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
