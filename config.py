@@ -93,7 +93,7 @@ assets = {'XJK': {'db_filepath': '{userdir}\\.joker\\mainnet\\db\\blockchain_v1_
          'TRZ': {'db_filepath': '{userdir}\\.tranzact\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
                  'denominator': 1000000000000,
                  'friendly_name': 'tranzact'},
-         'WHEAT': {'db_filepath': '{userdir}\\.wheat\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
+         'WHEAT': {'db_filepath': '{userdir}\\.wheat\\mainnet\\db\\blockchain_v2_mainnet.sqlite'.format(userdir=path.expanduser("~")),
                    'denominator': 1000000000000,
                    'friendly_name': 'wheat'},
          'XBR': {'db_filepath': '{userdir}\\.beernetwork\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
