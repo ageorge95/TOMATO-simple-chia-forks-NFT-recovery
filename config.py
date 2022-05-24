@@ -117,7 +117,7 @@ assets = {'XPT': {'db_filepath': '{userdir}\\.petroleum\\mainnet\\db\\blockchain
          'XCA': {'db_filepath': '{userdir}\\.xcha\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
                  'denominator': 1000000000000,
                  'friendly_name': 'xcha'},
-         'XCC': {'db_filepath': '{userdir}\\.chives\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
+         'XCC': {'db_filepath': '{userdir}\\.chives\\mainnet\\db\\blockchain_v2_mainnet.sqlite'.format(userdir=path.expanduser("~")),
                  'denominator': 100000000,
                  'friendly_name': 'chives'},
          'XCD': {'db_filepath': '{userdir}\\.cryptodoge\\mainnet\\db\\blockchain_v2_mainnet.sqlite'.format(userdir=path.expanduser("~")),
