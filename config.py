@@ -51,7 +51,7 @@ assets = {'XPT': {'db_filepath': '{userdir}\\.petroleum\\mainnet\\db\\blockchain
          'HDD': {'db_filepath': '{userdir}\\.hddcoin\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
                  'denominator': 1000000000000,
                  'friendly_name': 'hddcoin'},
-         'LCH': {'db_filepath': '{userdir}\\.lotus\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
+         'LCH': {'db_filepath': '{userdir}\\.lotus\\mainnet\\db\\blockchain_v2_mainnet.sqlite'.format(userdir=path.expanduser("~")),
                  'denominator': 1000000000000,
                  'friendly_name': 'lotus'},
          'MELON': {'db_filepath': '{userdir}\\.melon\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
