@@ -1,6 +1,9 @@
 from os import path
 
-assets = {'XPT': {'db_filepath': '{userdir}\\.petroleum\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
+assets = {'XSE': {'db_filepath': '{userdir}\\.seno2\\mainnet\\db\\blockchain_v2_mainnet.sqlite'.format(userdir=path.expanduser("~")),
+                 'denominator': 1000000000000,
+                 'friendly_name': 'seno'},
+          'XPT': {'db_filepath': '{userdir}\\.petroleum\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
                  'denominator': 1000000000000,
                  'friendly_name': 'petroleum'},
           'XGJ': {'db_filepath': '{userdir}\\.goji\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
