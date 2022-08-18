@@ -128,7 +128,7 @@ class Tomato():
                 ssl_crt = os_path.join(assets[self.asset]['db_filepath'], '../../config/ssl/full_node/private_full_node.crt')
                 ssl_key = os_path.join(assets[self.asset]['db_filepath'], '../../config/ssl/full_node/private_full_node.key')
 
-                for coin_solution_batch in [coin_solutions[x:x + 10] for x in range(0, len(coin_solutions), 10)]:
+                for coin_solution_batch in [coin_solutions[x:x + 20] for x in range(0, len(coin_solutions), 20)]:
                     try:
                         coin_amount = sum([entry['coin']['amount']/assets[self.asset]['denominator'] for entry in coin_solution_batch])
                         self._log.info(f"Trying to recover a batch of { len(coin_solution_batch) } "
@@ -137,6 +137,7 @@ class Tomato():
                         # use the 2 known ways to describe the spend bundle
                         # in this way compatibility with all the forks should be assured
                         for variation in ['coin_spends', 'coin_solutions']:
+                            self._log.info(f'Trying variation {variation} ...')
                             response = requests.post(
                                 url=f'https://localhost:{ self.full_node_RPC_port }/push_tx',
                                 cert=(ssl_crt,
@@ -145,15 +146,21 @@ class Tomato():
                                 json={
                                     'spend_bundle': {
                                         'aggregated_signature': dummy_aggregated_sig,
-                                        variation: coin_solutions
+                                        variation: coin_solution_batch
                                     }
-                                }).json()
-                            self._log.info(f"The full node responded with { response }")
-                            if response['success']:
+                                })
+                            try:
+                                response_json = response.json()
+                            except:
+                                response_json = {'success': False,
+                                                 'reason': response.content}
+                                self._log.error(f'Failed to convert the full node response to json. Reason:\n{format_exc(chain=False)}')
+                            self._log.info(f"The full node responded with { response_json }")
+                            if response_json['success']:
                                 break
 
-                        if not response['success']:
-                            raise Exception
+                        if not response_json['success']:
+                            break
                         self._log.info('Recovery completed !')
                         recovered_value += coin_amount
                         recovered_coins += len(coin_solution_batch)
