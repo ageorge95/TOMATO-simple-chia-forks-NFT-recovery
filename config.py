@@ -102,7 +102,7 @@ assets = {'HCX': {'db_filepath': '{userdir}\\.chinilla\\vanillanet\\db\\blockcha
          'STOR': {'db_filepath': '{userdir}\\.stor\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
                   'denominator': 1000000000000,
                   'friendly_name': 'stor'},
-         'TAD': {'db_filepath': '{userdir}\\.tad\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
+         'TAD': {'db_filepath': '{userdir}\\.tad\\mainnet\\db\\blockchain_v2_mainnet.sqlite'.format(userdir=path.expanduser("~")),
                  'denominator': 1000000000000,
                  'friendly_name': 'tad'},
          'TRZ': {'db_filepath': '{userdir}\\.tranzact\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
