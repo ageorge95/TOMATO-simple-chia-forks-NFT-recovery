@@ -165,7 +165,7 @@ assets = {'HCX': {'db_filepath': '{userdir}\\.chinilla\\vanillanet\\db\\blockcha
          'XMX': {'db_filepath': '{userdir}\\.melati\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
                  'denominator': 1000000000000,
                  'friendly_name': 'melati'},
-         'XMZ': {'db_filepath': '{userdir}\\.maize\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
+         'XMZ': {'db_filepath': '{userdir}\\.maize\\mainnet\\db\\blockchain_v2_mainnet.sqlite'.format(userdir=path.expanduser("~")),
                  'denominator': 1000000000000,
                  'friendly_name': 'maize'},
          'XNT': {'db_filepath': '{userdir}\\.skynet\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
