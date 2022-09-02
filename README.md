@@ -33,7 +33,10 @@ After the setup is done you can use the CLI interface to start the recovery.
 
 The delayed puzzlehash is the address where the recovered funds will go to.
 
-From my observations, I noticed that the delayed puzzlehash is always the third hardened address of the mnemonic which was used to create the plots.
+From my observations, I noticed that:
+- the delayed puzzlehash is the third hardened address of the mnemonic which was used to create the plots for XCH plotnfts which have been created with older versions of the software
+- the delayed puzzlehash is the third unhardened address of the mnemonic which was used to create the plots for XCH plotnfts which have been created with newer versions of the software
+- the delayed puzzlehash is the fifth hardened address of the mnemonic which was used to create the plots for XCC plotnfts which have been created with older versions of the software
 
 To quickly get the delayedPH to use with TOMATO, you can use WILLOW (https://github.com/ageorge95/WILLOW-chia-forks-instant-wallet-balance) to generate your addresses of the hot wallet, and then convert that address to a puzzlehash.
 
