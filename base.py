@@ -69,7 +69,7 @@ class db_wrapper_v2():
             f"AND timestamp > (strftime('%s', 'now') - { delay }) "
             f"AND puzzle_hash LIKE ? "
             f"ORDER BY timestamp DESC",
-            (contract_hex,)
+            (bytes.fromhex(contract_hex),)
         )
 
         return [[entry[0].hex(),
