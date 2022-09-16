@@ -12,23 +12,28 @@ parser = ArgumentParser(description='CLI: TOMATO-simple-chia-forks-NFT-recovery 
 
 parser.add_argument('-a',
                     '--asset',
+                    required=True,
                     type=str,
                     help=f"The asset for which you want to recover the rewards."
                          f" Can be one of the following: { '|'.join(coin for coin in assets.keys()) }")
 
 parser.add_argument('-d',
                     '--delayedPH',
+                    required=True,
                     type=str,
                     help='The delayed ph, where the rewards will be returned.'
                          ' Usually the 3rd address (ph) of the mnemonic that farmed the block.')
 
 parser.add_argument('-l',
                     '--launcher',
+                    required=True,
                     type=str,
                     help='The launcher ID. To be taken from chia NOT from the chia forks.')
 
 parser.add_argument('-c',
                     '--contract',
+                    required=True,
+                    type=str,
                     help='The contract encoded in the NFT plots. To be taken from chia NOT from the chia forks.')
 
 if __name__ == '__main__':
