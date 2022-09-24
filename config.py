@@ -1,6 +1,9 @@
 from os import path
 
-assets = {'HCX': {'db_filepath': '{userdir}\\.chinilla\\vanillanet\\db\\blockchain_v2_vanillanet.sqlite'.format(userdir=path.expanduser("~")),
+assets = {'MOC': {'db_filepath': '{userdir}\\.moon\\mainnet\\db\\blockchain_v2_mainnet.sqlite'.format(userdir=path.expanduser("~")),
+                 'denominator': 1000000000000,
+                 'friendly_name': 'moon'},
+          'HCX': {'db_filepath': '{userdir}\\.chinilla\\vanillanet\\db\\blockchain_v2_vanillanet.sqlite'.format(userdir=path.expanduser("~")),
                  'denominator': 1000000000000,
                  'friendly_name': 'chinilla'},
           'XSE': {'db_filepath': '{userdir}\\.seno2\\mainnet\\db\\blockchain_v2_mainnet.sqlite'.format(userdir=path.expanduser("~")),
