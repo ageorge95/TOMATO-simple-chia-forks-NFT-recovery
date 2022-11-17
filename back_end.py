@@ -115,11 +115,11 @@ class Tomato():
                     coin_solutions.append({
                         'coin': {
                             'amount': coin_amount,
-                            'parent_coin_info': coin_parent,
-                            'puzzle_hash': self.contract_hex
+                            'parent_coin_info': '0x' + coin_parent,
+                            'puzzle_hash': '0x' + self.contract_hex
                         },
                         'puzzle_reveal': bytes(SerializedProgram.from_program(self.puzzle)).hex(),
-                        'solution': coin_solution_hex
+                        'solution': '0x' + coin_solution_hex
                     })
 
                 recovered_value = 0
