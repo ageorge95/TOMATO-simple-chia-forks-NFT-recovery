@@ -9,6 +9,7 @@ colorama
 clvm
 chia_rs
 clmv_tools
+clvm_tools_rs
 bitstring
 chiavdf
 colorlog
@@ -21,3 +22,5 @@ websockets
 dnspython
 sortedcontainers
 setuptools
+typing_extensions
+filelock
