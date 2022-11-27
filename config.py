@@ -1,6 +1,9 @@
 from os import path
 
-assets = {'XCF': {'db_filepath': '{userdir}\\.coffee\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
+assets = {'GBTC': {'db_filepath': '{userdir}\\.greenbtc\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
+                   'denominator': 1000000000000,
+                   'friendly_name': 'greenbtc'},
+         'XCF': {'db_filepath': '{userdir}\\.coffee\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
                  'denominator': 1000000000000,
                  'friendly_name': 'coffee'},
           'MOC': {'db_filepath': '{userdir}\\.moon\\mainnet\\db\\blockchain_v2_mainnet.sqlite'.format(userdir=path.expanduser("~")),
