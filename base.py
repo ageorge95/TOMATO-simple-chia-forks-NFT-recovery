@@ -62,6 +62,9 @@ class db_wrapper_v2():
             contract_hex
     ):
 
+        self._dbcursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
+        print(self._dbcursor.fetchall())
+
         self._dbcursor.execute(
             f"SELECT coin_parent, amount "
             f"FROM coin_record "
