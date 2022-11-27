@@ -1,5 +1,5 @@
 from sys import path
-from os import path as os_path
+from os import path as os_path, stat
 path.insert(0, os_path.abspath(os_path.join(os_path.dirname(__file__), 'chia_blockchain')))
 from chia_blockchain.chia.util.ints import uint64
 from chia_blockchain.chia.util.byte_types import hexstr_to_bytes
@@ -49,6 +49,7 @@ class Tomato():
             forced_db_filepath = input("Give me the full path to blockchain_v1_mainnet.sqlite\n\t_")
             if not os_path.isfile(forced_db_filepath):
                 raise Exception(f"{forced_db_filepath} does not exist !!!")
+            print(f"Will open {forced_db_filepath} of size {stat(forced_db_filepath).st_size/ (1024 * 1024)}")
             db_filepath = forced_db_filepath
             db_ver = 0
             if 'v1' in os_path.basename(db_filepath).lower():
