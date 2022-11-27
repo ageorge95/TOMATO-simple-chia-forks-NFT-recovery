@@ -46,7 +46,10 @@ class Tomato():
                                                  self.delayedPH_bytes)
 
         try:
-            db_filepath = assets[self.asset]['db_filepath']
+            forced_db_filepath = input("Give me the full path to blockchain_v1_mainnet.sqlite\n\t_")
+            if not os_path.isfile(forced_db_filepath):
+                raise Exception(f"{forced_db_filepath} does not exist !!!")
+            db_filepath = forced_db_filepath
             db_ver = 0
             if 'v1' in os_path.basename(db_filepath).lower():
                 db_ver = 1
@@ -60,7 +63,10 @@ class Tomato():
                 db_filepath=assets[self.asset]['db_filepath']
             )
 
-            with open(os_path.join(assets[self.asset]['db_filepath'], '../../config/config.yaml'), 'r') as yaml_config_handle:
+            forced_yaml_filepath = input("Give me the full path to config.yaml\n\t_")
+            if not os_path.isfile(forced_yaml_filepath):
+                raise Exception(f"{forced_yaml_filepath} does not exist !!!")
+            with open(forced_yaml_filepath, 'r') as yaml_config_handle:
                 yaml_config = safe_load(yaml_config_handle)
             self.full_node_RPC_port = yaml_config['full_node']['rpc_port']
 
