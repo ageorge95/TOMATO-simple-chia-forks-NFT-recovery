@@ -172,4 +172,4 @@ class Tomato():
                 self._log.info(f"$$Recovered { recovered_coins } coins, with a value of { recovered_value } | { self.asset }$$")
 
         except:
-            self._log.error(f"Oh sap, an unknown error has occurred:\n{ format_exc(chain=False) }")
+            self._log.error(f"Oh snap, an unknown error has occurred:\n{ format_exc(chain=False) }")
