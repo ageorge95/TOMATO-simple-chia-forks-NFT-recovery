@@ -1,4 +1,7 @@
 # TOMATO-simple-chia-forks-NFT-recovery
+
+### NOTE: The tool was tested only on windows; on linux some users reported issues regarding the paths construction. See the troubleshooting channel from TOMATO's Discord server for more info (which is linked below) => if you want to use the tool on linux you are on your own, for now.
+
 - The tool:
   - can recover NFT pool rewards for chia and chia forks blockchains
   - is compatible with both v1 and v2 full node databases
@@ -40,7 +43,7 @@ From my observations, I noticed that:
 
 To quickly get the delayedPH to use with TOMATO, you can use WILLOW (https://github.com/ageorge95/WILLOW-chia-forks-instant-wallet-balance) to generate your addresses of the hot wallet, and then convert that address to a puzzlehash.
 
-# How to get the launcher, contract
+# How to get the launcher and the contract
 
 Those values must be taken from chia NOT from a chia fork.
 
