@@ -1,6 +1,9 @@
 from os import path
 
-assets = {'KIK': {'db_filepath': '{userdir}\\.kiwi\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
+assets = {'XONE': {'db_filepath': '{userdir}\\.one\\mainnet\\db\\blockchain_v2_mainnet.sqlite'.format(userdir=path.expanduser("~")),
+                   'denominator': 100000000,
+                   'friendly_name': 'one'},
+          'KIK': {'db_filepath': '{userdir}\\.kiwi\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
                    'denominator': 1000000,
                    'friendly_name': 'kiwi'},
           'GBTC': {'db_filepath': '{userdir}\\.greenbtc\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
