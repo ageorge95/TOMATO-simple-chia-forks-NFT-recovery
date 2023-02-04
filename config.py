@@ -72,7 +72,7 @@ assets = {'BALL': {'db_filepath': '{userdir}\\.ball\\mainnet\\db\\blockchain_v1_
          'GDOG': {'db_filepath': '{userdir}\\.greendoge\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
                   'denominator': 1000000000000,
                   'friendly_name': 'greendoge'},
-         'HDD': {'db_filepath': '{userdir}\\.hddcoin\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
+         'HDD': {'db_filepath': '{userdir}\\.hddcoin\\mainnet\\db\\blockchain_v2_mainnet.sqlite'.format(userdir=path.expanduser("~")),
                  'denominator': 1000000000000,
                  'friendly_name': 'hddcoin'},
          'LCH': {'db_filepath': '{userdir}\\.lotus\\mainnet\\db\\blockchain_v2_mainnet.sqlite'.format(userdir=path.expanduser("~")),
