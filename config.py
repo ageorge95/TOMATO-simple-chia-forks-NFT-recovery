@@ -201,7 +201,7 @@ assets = {'XTWO': {'db_filepath': '{userdir}\\.two\\mainnet\\db\\blockchain_v1_m
          'XSHIB': {'db_filepath': '{userdir}\\.shibgreen\\mainnet\\db\\blockchain_v2_mainnet.sqlite'.format(userdir=path.expanduser("~")),
                    'denominator': 1000,
                    'friendly_name': 'shibgreen'},
-         'XSLV': {'db_filepath': '{userdir}\\.salvia\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
+         'XSLV': {'db_filepath': '{userdir}\\.salvia\\mainnet\\db\\blockchain_v2_mainnet.sqlite'.format(userdir=path.expanduser("~")),
                   'denominator': 1000000000000,
                   'friendly_name': 'salvia'},
          'XTX': {'db_filepath': '{userdir}\\.taco\\mainnet\\db\\blockchain_v2_mainnet.sqlite'.format(userdir=path.expanduser("~")),
