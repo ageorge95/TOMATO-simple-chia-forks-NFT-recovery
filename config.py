@@ -165,7 +165,7 @@ assets = {'XTWO': {'db_filepath': '{userdir}\\.two\\mainnet\\db\\blockchain_v1_m
          'XFK': {'db_filepath': '{userdir}\\.fork\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
                  'denominator': 1000000000000,
                  'friendly_name': 'fork'},
-         'XFL': {'db_filepath': '{userdir}\\.flora\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
+         'XFL': {'db_filepath': '{userdir}\\.flora\\mainnet\\db\\blockchain_v2_mainnet.sqlite'.format(userdir=path.expanduser("~")),
                  'denominator': 1000000000000,
                  'friendly_name': 'flora'},
          'XFX': {'db_filepath': '{userdir}\\.flax\\mainnet\\db\\blockchain_v2_mainnet.sqlite'.format(userdir=path.expanduser("~")),
