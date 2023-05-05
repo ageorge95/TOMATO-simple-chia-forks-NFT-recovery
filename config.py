@@ -114,7 +114,7 @@ assets = {'XTWO': {'db_filepath': '{userdir}\\.two\\mainnet\\db\\blockchain_v1_m
          'SOCK': {'db_filepath': '{userdir}\\.socks\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
                   'denominator': 1000000000000,
                   'friendly_name': 'socks'},
-         'SPARE': {'db_filepath': '{userdir}\\.spare-blockchain\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
+         'SPARE': {'db_filepath': '{userdir}\\.spare\\mainnet\\db\\blockchain_v2_mainnet.sqlite'.format(userdir=path.expanduser("~")),
                    'denominator': 1000000000000,
                    'friendly_name': 'spare'},
          'STAI': {'db_filepath': '{userdir}\\.stai\\mainnet\\db\\blockchain_v2_mainnet.sqlite'.format(userdir=path.expanduser("~")),
