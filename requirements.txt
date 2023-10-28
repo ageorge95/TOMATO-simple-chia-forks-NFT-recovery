@@ -1,1 +1,3 @@
 setuptools
+typing_extensions
+clvm
