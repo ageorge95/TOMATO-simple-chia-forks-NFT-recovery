@@ -1,11 +1,9 @@
 from argparse import ArgumentParser
+import os
 from logging import getLogger
-import os,\
-    sys
-from back_end import Tomato
-from config import assets
-from base import configure_logger
-from logging import getLogger
+from basket.back_end import Tomato
+from basket.config import assets
+from basket.base import configure_logger
 
 parser = ArgumentParser(description='CLI: TOMATO-simple-chia-forks-NFT-recovery |'
                                     ' ' + open(os.path.join(os.path.dirname(__file__), 'version.txt'), 'r').read())
