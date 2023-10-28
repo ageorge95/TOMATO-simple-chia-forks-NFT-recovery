@@ -2,6 +2,9 @@
 
 set root=%cd%
 
+set python=%1
+IF "%python%"=="" set python="python"
+
 :: installation
 
 git submodule update --progress --init --recursive --force
@@ -14,6 +17,15 @@ mklink /j chia chia_blockchain\chia
 mklink /j venv\Scripts\basket basket
 
 call activate.bat
+
+python install_helper.py || goto :error
+goto :all_good
+
+: error
+pause
+exit
+
+: all_good
 
 python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
