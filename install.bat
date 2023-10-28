@@ -1,5 +1,7 @@
 @echo off
 
+set root=%cd%
+
 :: installation
 
 git submodule update --progress --init --recursive --force
@@ -8,6 +10,7 @@ python -m venv venv
 :: Windows doesn't allow the creation of symlinks without special priviledges, so hardlinks are created instead.
 mklink /h activate.bat venv\Scripts\activate.bat
 mklink /j venv\Scripts\chia chia_blockchain\chia
+mklink /j chia chia_blockchain\chia
 mklink /j venv\Scripts\basket basket
 
 call activate.bat
@@ -29,6 +32,10 @@ echo.
 echo Run 'tomato -h' for further instructions.
 echo.
 echo @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+rmdir /s /q %root%\build
+rmdir /s /q %root%\dist
+rmdir /s /q %root%\TOMATO.egg-info
 
 pause
 
