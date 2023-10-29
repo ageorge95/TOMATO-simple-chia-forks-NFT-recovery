@@ -1,22 +1,21 @@
-from sys import path
-from os import path as os_path
-path.insert(0, os_path.abspath(os_path.join(os_path.dirname(__file__), '../chia_blockchain')))
-from chia_blockchain.chia.util.ints import uint64
-from chia_blockchain.chia.util.byte_types import hexstr_to_bytes
-from chia_blockchain.chia.util.bech32m import decode_puzzle_hash
-from chia_blockchain.chia.types.blockchain_format.program import Program, \
+from chia.util.ints import uint64
+from chia.util.byte_types import hexstr_to_bytes
+from chia.util.bech32m import decode_puzzle_hash
+from chia.types.blockchain_format.program import Program, \
     SerializedProgram
-from chia_blockchain.chia.types.blockchain_format.sized_bytes import bytes32
-from chia_blockchain.chia.pools.pool_puzzles import SINGLETON_MOD_HASH,\
+from chia.types.blockchain_format.sized_bytes import bytes32
+from chia.pools.pool_puzzles import SINGLETON_MOD_HASH,\
     create_p2_singleton_puzzle
-from config import assets
+from basket.config import assets
 import requests
-requests.packages.urllib3.disable_warnings()
-from base import db_wrapper_selector,\
-    dummy_aggregated_sig
+from basket.base import (db_wrapper_selector,
+                         dummy_aggregated_sig)
 from logging import getLogger
 from traceback import format_exc
 from yaml import safe_load
+from os import path
+
+requests.packages.urllib3.disable_warnings()
 
 class Tomato():
     def __init__(self,
@@ -48,9 +47,9 @@ class Tomato():
         try:
             db_filepath = assets[self.asset]['db_filepath']
             db_ver = 0
-            if 'v1' in os_path.basename(db_filepath).lower():
+            if 'v1' in path.basename(db_filepath).lower():
                 db_ver = 1
-            if 'v2' in os_path.basename(db_filepath).lower():
+            if 'v2' in path.basename(db_filepath).lower():
                 db_ver = 2
             self.db_wrapper = db_wrapper_selector(db_ver)()
             if not self.db_wrapper:
@@ -60,7 +59,7 @@ class Tomato():
                 db_filepath=assets[self.asset]['db_filepath']
             )
 
-            with open(os_path.join(assets[self.asset]['db_filepath'], '../../config/config.yaml'), 'r') as yaml_config_handle:
+            with open(path.join(assets[self.asset]['db_filepath'], '../../config/config.yaml'), 'r') as yaml_config_handle:
                 yaml_config = safe_load(yaml_config_handle)
             self.full_node_RPC_port = yaml_config['full_node']['rpc_port']
 
@@ -125,8 +124,8 @@ class Tomato():
                 recovered_value = 0
                 recovered_coins = 0
 
-                ssl_crt = os_path.join(assets[self.asset]['db_filepath'], '../../config/ssl/full_node/private_full_node.crt')
-                ssl_key = os_path.join(assets[self.asset]['db_filepath'], '../../config/ssl/full_node/private_full_node.key')
+                ssl_crt = path.join(assets[self.asset]['db_filepath'], '../../config/ssl/full_node/private_full_node.crt')
+                ssl_key = path.join(assets[self.asset]['db_filepath'], '../../config/ssl/full_node/private_full_node.key')
 
                 for coin_solution_batch in [coin_solutions[x:x + 20] for x in range(0, len(coin_solutions), 20)]:
                     try:
