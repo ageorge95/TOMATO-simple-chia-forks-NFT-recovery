@@ -4,6 +4,7 @@ filelock
 bitstring
 requests
 PyYAML
+click
 clvm==0.9.7
 chia_rs==0.2.11
 clvm-tools-rs==0.1.34

@@ -1,8 +1,8 @@
 from chia.util.ints import uint64
 from chia.util.byte_types import hexstr_to_bytes
 from chia.util.bech32m import decode_puzzle_hash
-from chia.types.blockchain_format.program import Program, \
-    SerializedProgram
+from chia.types.blockchain_format.program import Program
+from chia.types.blockchain_format.serialized_program import SerializedProgram
 from chia.types.blockchain_format.sized_bytes import bytes32
 from chia.pools.pool_puzzles import SINGLETON_MOD_HASH,\
     create_p2_singleton_puzzle
