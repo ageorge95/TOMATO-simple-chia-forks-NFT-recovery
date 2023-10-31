@@ -22,13 +22,11 @@
 - Also, feel free to contribute to the tool's development with a PR.
 
 # How to use
-- Have python installed on your system (I recommend 3.9.x, 64bit).
+- Have python installed on your system (I recommend 3.11.x, 64bit).
 
-- Setup a venv.
+- Use the provided `install.bat` file
 
-- pip install the required packages from requirements.txt
-
-After the setup is done you can use the CLI interface to start the recovery.
+After the setup is done you can use the CLI interface to start the recovery; type tomato -h for more info.
 
 ![alt text](ReadMe_res/CLI_overview.JPG?raw=true)
 
