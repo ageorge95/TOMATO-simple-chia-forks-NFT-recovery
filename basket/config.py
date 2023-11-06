@@ -165,7 +165,7 @@ assets = {'XSEA': {'db_filepath': '{userdir}\\.sea\\mainnet\\db\\blockchain_v2_m
          'XDG': {'db_filepath': '{userdir}\\.dogechia\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
                  'denominator': 1000000000000,
                  'friendly_name': 'dogechia'},
-         'XETH': {'db_filepath': '{userdir}\\.ethgreen\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
+         'XETH': {'db_filepath': '{userdir}\\.ethgreen\\mainnet\\db\\blockchain_v2_mainnet.sqlite'.format(userdir=path.expanduser("~")),
                   'denominator': 1000000000,
                   'friendly_name': 'ethgreen'},
          'XFK': {'db_filepath': '{userdir}\\.fork\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
