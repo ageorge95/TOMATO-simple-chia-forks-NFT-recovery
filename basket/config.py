@@ -18,7 +18,7 @@ assets = {'XSEA': {'db_filepath': '{userdir}\\.sea\\mainnet\\db\\blockchain_v2_m
           'KIK': {'db_filepath': '{userdir}\\.kiwi\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
                    'denominator': 1000000,
                    'friendly_name': 'kiwi'},
-          'GBTC': {'db_filepath': '{userdir}\\.greenbtc\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
+          'GBTC': {'db_filepath': '{userdir}\\.greenbtc\\mainnet\\db\\blockchain_v2_r1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
                    'denominator': 1000000000000,
                    'friendly_name': 'greenbtc'},
          'XCF': {'db_filepath': '{userdir}\\.coffee\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
