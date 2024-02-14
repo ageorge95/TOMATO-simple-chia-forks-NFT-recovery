@@ -1,6 +1,6 @@
 from os import path
 
-assets = {'XSEA': {'db_filepath': '{userdir}\\.sea\\mainnet\\db\\blockchain_v2_mainnet.sqlite'.format(userdir=path.expanduser("~")),
+assets = {'XSEA': {'db_filepath': '{userdir}\\.sea\\mainnet\\db\\blockchain_v2_r1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
                    'denominator': 1000000000000,
                    'friendly_name': 'seacoin'},
           'XCK': {'db_filepath': '{userdir}\\.chik\\mainnet\\db\\blockchain_v2_mainnet.sqlite'.format(userdir=path.expanduser("~")),
