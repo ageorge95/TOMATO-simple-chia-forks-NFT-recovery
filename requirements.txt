@@ -6,6 +6,6 @@ requests
 PyYAML
 click
 clvm==0.9.8
-chia_rs==0.2.15
-clvm-tools-rs==0.1.39
+chia_rs==0.4.1
+clvm-tools-rs==0.1.40
 chiapos==2.0.3
