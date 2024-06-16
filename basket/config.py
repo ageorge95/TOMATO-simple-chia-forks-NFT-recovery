@@ -135,7 +135,7 @@ assets = {'ABA': {'db_filepath': '{userdir}\\.aba\\mainnet\\db\\blockchain_v2_ma
          'STAI': {'db_filepath': '{userdir}\\.stai\\mainnet\\db\\blockchain_v2_mainnet.sqlite'.format(userdir=path.expanduser("~")),
                   'denominator': 1000000000,
                   'friendly_name': 'staicoin'},
-         'STOR': {'db_filepath': '{userdir}\\.stor\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
+         'STOR': {'db_filepath': '{userdir}\\.stor\\mainnet\\db\\blockchain_v2_mainnet.sqlite'.format(userdir=path.expanduser("~")),
                   'denominator': 1000000000000,
                   'friendly_name': 'stor'},
          'TAD': {'db_filepath': '{userdir}\\.tad\\mainnet\\db\\blockchain_v2_mainnet.sqlite'.format(userdir=path.expanduser("~")),
