@@ -1,6 +1,9 @@
 from os import path
 
-assets = {'ABA': {'db_filepath': '{userdir}\\.aba\\mainnet\\db\\blockchain_v2_mainnet.sqlite'.format(userdir=path.expanduser("~")),
+assets = {'LOT': {'db_filepath': '{userdir}\\.lottery\\mainnet\\db\\blockchain_v2_mainnet.sqlite'.format(userdir=path.expanduser("~")),
+                   'denominator': 1000000000,
+                   'friendly_name': 'lottery'},
+          'ABA': {'db_filepath': '{userdir}\\.aba\\mainnet\\db\\blockchain_v2_mainnet.sqlite'.format(userdir=path.expanduser("~")),
                    'denominator': 1000000000000,
                    'friendly_name': 'aba'},
           'XXCH': {'db_filepath': '{userdir}\\.xxch\\mainnet\\db\\blockchain_v2_mainnet.sqlite'.format(userdir=path.expanduser("~")),
