@@ -57,7 +57,7 @@ assets = {'LOT': {'db_filepath': '{userdir}\\.lottery\\mainnet\\db\\blockchain_v
           'XJK': {'db_filepath': '{userdir}\\.joker\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
                  'denominator': 100000000,
                  'friendly_name': 'joker'},
-          'GL': {'db_filepath': '{userdir}\\.gold\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
+          'GL': {'db_filepath': '{userdir}\\.gold\\mainnet\\db\\blockchain_v2_mainnet.sqlite'.format(userdir=path.expanduser("~")),
                  'denominator': 1000000000000,
                  'friendly_name': 'gold'},
           'PROFIT': {'db_filepath': '{userdir}\\.profit\\mainnet\\db\\blockchain_v1_mainnet.sqlite'.format(userdir=path.expanduser("~")),
